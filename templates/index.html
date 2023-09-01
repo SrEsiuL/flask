@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registros</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/script.js"></script>
+</head>
+<body>
+    <h1>INGRESAR NUEVOS REGISTROS</h1>
+    <form id="nuevos" action="/productos" method="POST">
+        <label>Nombre: </label><input id="nomb" type="text" name="name"><br>
+        <label>Edad: </label><input id="age" type="text" name="age"><br>
+        <label>Correo: </label><input id="mail" type="text" name="email"><br>
+        <input type="button" id="btn_guardar" onclick="guardar();" value="Guardar"><br>
+    </form>
+    <div>
+        <h2>Datos</h2>
+		<table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Correo</th>
+                    <th>Operación</th>
+                </tr>
+            </thead>
+            <tbody id="tablita">
+			</tbody>
+        </table>
+    </div>
+</body>
+</html>
