@@ -8,6 +8,6 @@ class Product:
 def toDBCollection(self):
     return{
         'name': self.name,
-        'price': self.age,
-        'quantity': self.email
+        'age': self.age,
+        'email': self.email
     }

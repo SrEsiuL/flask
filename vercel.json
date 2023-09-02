@@ -1,0 +1,15 @@
+{
+    "version":3,
+    "builds":[
+        {
+            "src":"./controlador.py",
+            "use":"@vercel/python"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"/"
+        }
+    ]
+}
