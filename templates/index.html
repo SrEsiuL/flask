@@ -44,7 +44,7 @@
                             {% for goleador in goleadores %}
 
                                 <div>
-                                    <form action="/edit/{{goleador.name}}" method="POST">
+                                    <form action="/edit/{{goleador._id}}" method="POST">
                                         <small>NOMBRE</small>
                                         <input type="text" value="{{goleador.name}}" name="name">
                                         <small>PG</small>
@@ -52,7 +52,7 @@
                                         <small>GOLES</small>
                                         <input type="text" value="{{goleador.goals}}" name="goals">
                                         <button type="submit">Editar</button>
-                                        <a href="{{url_for('delete', goleador_name=goleador.name)}}">Eliminar</a>
+                                        <a href="{{url_for('delete', goleador_id=goleador._id)}}">Eliminar</a>
                                     </form>
                                 </div>
 

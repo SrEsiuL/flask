@@ -34,14 +34,14 @@ def addProduct():
         return notFound()
 
 #Method delete
-@app.route('/delete/<string:goleador_name>')
+@app.route('/delete/<string:goleador_id>')
 def delete(goleador_name):
     goleadores = db['goleadores']
     goleadores.delete_one({'name' : goleador_name})
     return redirect(url_for('home'))
 
 #Method Put
-@app.route('/edit/<string:goleador_name>', methods=['POST'])
+@app.route('/edit/<string:goleador_id>', methods=['POST'])
 def edit(goleador_name):
     goleadores = db['goleadores']
     name = request.form['name']
