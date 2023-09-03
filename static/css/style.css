@@ -3,3 +3,8 @@ label{
     width: 80px;
     margin:5px;
 }
+
+small{
+    display: inline-block;
+    margin:5px;
+}

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, Response, jsonify, redirect, url_for
 import models as dbase  
-from product import Product
+from goleador import Goleador
 
 db = dbase.dbConnection()
 
@@ -9,48 +9,48 @@ app = Flask(__name__)
 #Rutas de la aplicación
 @app.route('/')
 def home():
-    products = db['products']
-    productsReceived = products.find()
-    return render_template('index.html', products = productsReceived)
+    goleadores = db['goleadores']
+    goleadoresReceived = goleadores.find()
+    return render_template('index.html', goleadores = goleadoresReceived)
 
 #Method Post
-@app.route('/products', methods=['POST'])
+@app.route('/goleadores', methods=['POST'])
 def addProduct():
-    products = db['products']
+    goleadores = db['goleadores']
     name = request.form['name']
-    price = request.form['price']
-    quantity = request.form['quantity']
+    goals = request.form['goals']
+    pg = request.form['pg']
 
-    if name and price and quantity:
-        product = Product(name, price, quantity)
-        products.insert_one(product.toDBCollection())
+    if name and goals and pg:
+        goleador = Goleador(name, goals, pg)
+        goleadores.insert_one(goleador.toDBCollection())
         response = jsonify({
             'name' : name,
-            'price' : price,
-            'quantity' : quantity
+            'goals' : goals,
+            'pg' : pg
         })
         return redirect(url_for('home'))
     else:
         return notFound()
 
 #Method delete
-@app.route('/delete/<string:product_name>')
-def delete(product_name):
-    products = db['products']
-    products.delete_one({'name' : product_name})
+@app.route('/delete/<string:goleador_name>')
+def delete(goleador_name):
+    goleadores = db['goleadores']
+    goleadores.delete_one({'name' : goleador_name})
     return redirect(url_for('home'))
 
 #Method Put
-@app.route('/edit/<string:product_name>', methods=['POST'])
-def edit(product_name):
-    products = db['products']
+@app.route('/edit/<string:goleador_name>', methods=['POST'])
+def edit(goleador_name):
+    goleadores = db['goleadores']
     name = request.form['name']
-    price = request.form['price']
-    quantity = request.form['quantity']
+    goals = request.form['goals']
+    pg = request.form['pg']
 
-    if name and price and quantity:
-        products.update_one({'name' : product_name}, {'$set' : {'name' : name, 'price' : price, 'quantity' : quantity}})
-        response = jsonify({'message' : 'Producto ' + product_name + ' actualizado correctamente'})
+    if name and goals and pg:
+        goleadores.update_one({'name' : goleador_name}, {'$set' : {'name' : name, 'goals' : goals, 'pg' : pg}})
+        response = jsonify({'message' : 'Producto ' + goleador_name + ' actualizado correctamente'})
         return redirect(url_for('home'))
     else:
         return notFound()
@@ -68,4 +68,4 @@ def notFound(error=None):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=4000)
+    app.run(debug=True, port=1212)

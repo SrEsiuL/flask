@@ -1,6 +1,15 @@
 {
-    "rewrites": [
-        { "source": "/(.*)",
-        "destination": "/controlador.py" }
+    "version": 2,
+    "builds": [
+        {
+            "src": "./controlador.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        }
     ]
 }
