@@ -34,14 +34,14 @@ def addProduct():
         return notFound()
 
 #Method delete
-@app.route('/delete/<string:goleador_id>')
+@app.route('/delete/<string:goleador_name>')
 def delete(goleador_name):
     goleadores = db['goleadores']
     goleadores.delete_one({'name' : goleador_name})
     return redirect(url_for('home'))
 
 #Method Put
-@app.route('/edit/<string:goleador_id>', methods=['POST'])
+@app.route('/edit/<string:goleador_name>', methods=['POST'])
 def edit(goleador_name):
     goleadores = db['goleadores']
     name = request.form['name']
@@ -50,7 +50,7 @@ def edit(goleador_name):
 
     if name and goals and pg:
         goleadores.update_one({'name' : goleador_name}, {'$set' : {'name' : name, 'goals' : goals, 'pg' : pg}})
-        response = jsonify({'message' : 'Producto ' + goleador_name + ' actualizado correctamente'})
+        response = jsonify({'message' : 'Goleador ' + goleador_name + ' actualizado correctamente'})
         return redirect(url_for('home'))
     else:
         return notFound()

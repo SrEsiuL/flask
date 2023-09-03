@@ -6,7 +6,6 @@ class Goleador:
 
     def toDBCollection(self):
         return{
-            '_id':self._id,
             'name': self.name,
             'goals': self.goals,
             'pg': self.pg
