@@ -44,7 +44,7 @@
             {% for goleador in goleadores %}
                 <form action="/edit/{{goleador.id2}}" method="POST">
                 <tbody>
-                    <tr>
+                    <tr class="cuerpo">
                         <td><input type="text" value="{{goleador.name}}" name="name"></td>
                         <td><input type="text" value="{{goleador.pg}}" name="pg"></td>
                         <td><input type="text" value="{{goleador.goals}}" name="goals"></td>
