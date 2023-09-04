@@ -33,16 +33,27 @@
         <div>
             <h5>Goleadores</h5>
             {% for goleador in goleadores %}
+            <table>
+                <thead>
                 <form action="/edit/{{goleador.id2}}" method="POST">
-                    <small>NOMBRE</small>
-                    <input type="text" value="{{goleador.name}}" name="name">
-                    <small>PG</small>
-                    <input type="text" value="{{goleador.pg}}" name="pg">
-                    <small>GOLES</small>
-                    <input type="text" value="{{goleador.goals}}" name="goals">
-                    <button type="submit">Editar</button>
-                    <a href="{{url_for('delete', goleador_name=goleador.id2)}}">Eliminar</a>
+                    <tr>
+                        <th><small>NOMBRE</small></th>
+                        <th><small>PG</small></th>
+                        <th><small>GOLES</small></th>
+                        <th><small>ACCIONES</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" value="{{goleador.name}}" name="name"></td>
+                        <td><input type="text" value="{{goleador.pg}}" name="pg"></td>
+                        <td><input type="text" value="{{goleador.goals}}" name="goals"></td>
+                        <td><button type="submit">Editar</button>
+                            <a href="{{url_for('delete', goleador_name=goleador.id2)}}">Eliminar</a></td>
+                    </tr>
                 </form>
+                </tbody>
+            </table>
         </div>
             {% endfor %}
     </div>
