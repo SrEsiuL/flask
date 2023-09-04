@@ -12,7 +12,7 @@ th {
     background-color: rgb(31, 8, 245);
     color:rgb(212, 248, 7);
 }
-th, td {
+.cuerpo {
     padding: 8px;
     text-align: center;
 }
