@@ -37,7 +37,7 @@ def addProduct():
 @app.route('/delete/<string:goleador_name>')
 def delete(goleador_name):
     goleadores = db['goleadores']
-    goleadores.delete_one({'id' : goleador_name})
+    goleadores.delete_one({'id2' : goleador_name})
     return redirect(url_for('home'))
 
 #Method Put
@@ -49,7 +49,7 @@ def edit(goleador_name):
     pg = request.form['pg']
 
     if name and goals and pg:
-        goleadores.update_one({'id' : goleador_name}, {'$set' : {'name' : name, 'goals' : goals, 'pg' : pg}})
+        goleadores.update_one({'id2' : goleador_name}, {'$set' : {'name' : name, 'goals' : goals, 'pg' : pg}})
         response = jsonify({'message' : 'Goleador ' + goleador_name + ' actualizado correctamente'})
         return redirect(url_for('home'))
     else:
