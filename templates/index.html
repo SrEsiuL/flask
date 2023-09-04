@@ -10,59 +10,40 @@
 </head>
 <body>
 
-    <div >
+    <div>
         <h1>GOLEADORES HISTORICOS: CLUB ATLETICO BOCA JUNIORS</h1>
     </div>
 
     <div>
         <div>
-            <div>
-                <div>
-                    <div>
-                        <h5>Nuevo Goleador</h5>
-                    </div>
-                    <div>
-                        <form action="/goleadores" method="POST">
-                            <label>Nombre</label>
-                            <input type="text" name="name"><br />
-                            <label>Goles</label>
-                            <input type="text" name="goals"><br />
-                            <label>PG</label>
-                            <input type="text" name="pg"><br />
-                            <button type="submit">Guardar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div >
-                <div>
-                    <div>
-                        <h5>Goleadores</h5>
-                    </div>
-                    <div>
-                        <div>
-                            {% for goleador in goleadores %}
-                            
-                                <div>
-                                    <form action="/edit/{{goleador.id2}}" method="POST">
-                                        <small>NOMBRE</small>
-                                        <input type="text" value="{{goleador.name}}" name="name">
-                                        <small>PG</small>
-                                        <input type="text" value="{{goleador.pg}}" name="pg">
-                                        <small>GOLES</small>
-                                        <input type="text" value="{{goleador.goals}}" name="goals">
-                                        <button type="submit">Editar</button>
-                                        <a href="{{url_for('delete', goleador_name=goleador.id2)}}">Eliminar</a>
-                                    </form>
-                                </div>
-
-                            {% endfor %}
-                        </div>
-                    </div> 
-                </div>
-            </div>
+            <h5>Nuevo Goleador</h5>
+            <form action="/goleadores" method="POST">
+                <label>Nombre</label>
+                <input type="text" name="name"><br />
+                <label>Goles</label>
+                <input type="text" name="goals"><br />
+                <label>PG</label>
+                <input type="text" name="pg"><br />
+                <button type="submit">Guardar</button>
+            </form>
         </div>
+    </div>
+    <div >
+        <div>
+            <h5>Goleadores</h5>
+            {% for goleador in goleadores %}
+                <form action="/edit/{{goleador.id2}}" method="POST">
+                    <small>NOMBRE</small>
+                    <input type="text" value="{{goleador.name}}" name="name">
+                    <small>PG</small>
+                    <input type="text" value="{{goleador.pg}}" name="pg">
+                    <small>GOLES</small>
+                    <input type="text" value="{{goleador.goals}}" name="goals">
+                    <button type="submit">Editar</button>
+                    <a href="{{url_for('delete', goleador_name=goleador.id2)}}">Eliminar</a>
+                </form>
+        </div>
+            {% endfor %}
     </div>
     
 </body>
