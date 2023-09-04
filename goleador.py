@@ -1,13 +1,13 @@
 class Goleador:
     def __init__(self, name, goals, pg):
-        self.id =  (str(goals)+name+str(pg))
+        self.id2 =  (str(goals)+name+str(pg))
         self.name = name
         self.goals = goals
         self.pg = pg
 
     def toDBCollection(self):
         return{
-            'id':self.id,
+            'id2':self.id2,
             'name': self.name,
             'goals': self.goals,
             'pg': self.pg
