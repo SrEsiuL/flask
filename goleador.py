@@ -1,6 +1,6 @@
 class Goleador:
     def __init__(self, name, goals, pg):
-        self.id2 =  (str(goals)+name+str(pg))
+        self.id2 =  (str(goals)+name.replace(" ","")+str(pg))
         self.name = name
         self.goals = goals
         self.pg = pg
