@@ -1,5 +1,6 @@
 class Goleador:
     def __init__(self, name, goals, pg):
+        self.id =  str(goals)+name+str(pg)
         self.name = name
         self.goals = goals
         self.pg = pg
