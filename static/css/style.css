@@ -12,6 +12,14 @@ body{
 .titulo{
   font-family: Arial, Helvetica, sans-serif;
   color:rgb(7, 7, 7);
+	display:flex;
+	position:relative;
+	justify-content:center;
+	align-content:center;
+  background-color: hsla(241, 95%, 26%, 0.534);
+  color:#ffe600;
+	width:50%;
+	left:19%;
 }
 
 a{
@@ -44,17 +52,6 @@ a:hover{
 .customers button:hover{
   background-color: rgb(24, 3, 146);
   color: #ffffff;
-}
-
-.titulo{
-	display:flex;
-	position:relative;
-	justify-content:center;
-	align-content:center;
-  background-color: hsla(241, 95%, 26%, 0.534);
-  color:#ffe600;
-	width:50%;
-	left:19%;
 }
 
 /*estilo formulario*/
