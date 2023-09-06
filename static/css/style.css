@@ -46,7 +46,7 @@ a:hover{
   color: #ffffff;
 }
 
-h2, h1{
+.titulo{
 	display:flex;
 	position:relative;
 	justify-content:center;
