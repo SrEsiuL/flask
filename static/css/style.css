@@ -12,9 +12,6 @@ body{
 .titulo{
   font-family: Arial, Helvetica, sans-serif;
   color:rgb(7, 7, 7);
-width:50%;
-	left:30%;
-	
 }
 
 a{
@@ -52,6 +49,8 @@ a:hover{
 h2, h1{
   background-color: hsla(241, 95%, 26%, 0.534);
   color:#ffe600;
+	width:50%;
+	left:30%;
 }
 
 /*estilo formulario*/
