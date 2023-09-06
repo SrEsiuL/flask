@@ -15,7 +15,7 @@ def home():
 
 #Method Post
 @app.route('/goleadores', methods=['POST'])
-def addProduct():
+def addJugador():
     goleadores = db['goleadores']
     name = request.form['name']
     goals = request.form['goals']
