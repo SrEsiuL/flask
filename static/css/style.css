@@ -54,12 +54,12 @@ h2, h1{
   background-color: hsla(241, 95%, 26%, 0.534);
   color:#ffe600;
 	width:50%;
-	left:12%;
+	left:15%;
 }
 
 /*estilo formulario*/
 form{
-	width:50%;
+	width:300px;
 	padding:16px;
 	border-radius:10px;
 	margin:auto;
